@@ -6,9 +6,10 @@ screen bestiary(clues):
             hbox:
                 # Clues on the left
                 vbox:
+                    style_prefix "check"
                     for n in clues:
                         if clues[n]["found"]:
-                            textbutton n
+                            textbutton n tooltip clues[n]["description"] action ToggleDict(clues[n],"selected")
 
                 # Attributes in the middle
                 vbox:

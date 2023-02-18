@@ -50,11 +50,11 @@ label start:
     default ch1.victory = False
     default ch1.clues = {}
     python:
-        ch1.clues = {"blood":{"found":False, "selected":False},
-                     "river":{"found":False, "selected":False},
-                     "footprints":{"found":False, "selected":False},
-                     "body":{"found":False, "selected":False},
-                     "stab_wound":{"found":False, "selected":False}
+        ch1.clues = {"Blood":{"found":False, "selected":False, "description":"I found two types of blood; one human, one fae."},
+                     "Water":{"found":False, "selected":False, "description":"The murder happened near the water."},
+                     "Footprints":{"found":False, "selected":False, "description":"Small, humanoid footprints led from the water to the crime scene and back."},
+                     "Body":{"found":False, "selected":False, "description":"The body was found in the water, but appeared to have died before entering the water."},
+                     "Wound":{"found":False, "selected":False, "description":"There were sharp puncture wounds in the victim's chest."}
                     }
 
 # The game starts here.

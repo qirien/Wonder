@@ -28,7 +28,7 @@ label chapter1:
     "I'm looking for a murderer."
     "Not just any murderer; a fae murderer."
     "I need capture them alive and bring them back to Q."
-    "My friend Z works at the library and can help if I need to do any research. I should also check out the crime scene and question anyone who might have seen something."
+    "My friend J works at the library and can help if I need to do any research. I should also check out the crime scene and question anyone who might have seen something."
 
 label investigation_loop:
     scene city-night
@@ -83,14 +83,14 @@ label crimescene1:
         "What should I examine?"
         "Riverbank":
             "Footprints seemed to come out of the water, lead to a dark stain, and then return to the water."
-            $ ch1.clues["river"]["found"] = True
-        "Footprints" if ch1.clues["river"]["found"]:
+            $ ch1.clues["Water"]["found"] = True
+        "Footprints" if ch1.clues["Water"]["found"]:
             "The footprints looked human but small and light, almost like a child."
-            $ ch1.clues["footprints"]["found"] = True
-        "Dark stain" if ch1.clues["river"]["found"]:
+            $ ch1.clues["Footprints"]["found"] = True
+        "Dark stain" if ch1.clues["Water"]["found"]:
             "The dark stain seemed like blood. Looking closer, I could see smaller stains of a different color nearby."
             "Opening my senses to the fae realm, I could sense two separate auras emitting from these stains."
-            if (ch1.clues["body"]["found"]):
+            if (ch1.clues["Body"]["found"]):
                 "The large, dark one smelled mundane and matched the victim I had seen earlier."
             else:
                 "The large, dark one smelled mundane."
@@ -110,12 +110,12 @@ label morgue:
         "Smell":
             "I didn't really want to smell the body, but I had to in order to learn more."
             "I tried to smell past the decaying body stench and into the realm of the fae. However, this body was mundane and had no otherworldly smell."
-            $ ch1.clues["body"]["found"] = True
+            $ ch1.clues["Body"]["found"] = True
         "Throat":
             "While the body was bloated with water, it appeared that the victim died before sinking in the river."
         "Abdomen":
             "The skin was perforated multiple times around the chest with something small and sharp. Looked like someone was aiming for the heart but wasn't sure exactly where it was."
-            $ ch1.clues["stab_wound"]["found"] = True
+            $ ch1.clues["Wound"]["found"] = True
         "Feet":
             "There was no mud under the toenails. The report says she was found with shoes on."
         "Leave":
