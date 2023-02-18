@@ -1,3 +1,12 @@
+# Ren'Py stuff
+log.txt
+traceback.txt
+errors.txt
+*.rpyc
+*.rpyb
+game/cache
+game/saves
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
