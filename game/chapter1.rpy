@@ -25,10 +25,10 @@ label chapter1:
     q "You have a unique gift; I look forward to your quick resolution to this matter."
 
     scene city-night
-    "I'm looking for a murderer."
-    "Not just any murderer; a fae murderer."
+    "There's a fae in this town."
+    "Rumor has it they run a local pub."
     "I need capture them alive and bring them back to Q."
-    "My friend J works at the library and can help if I need to do any research. I should also check out the crime scene and question anyone who might have seen something."
+    "My friend J works at the library and can help if I need to do any research. I should also check out the area and question anyone who might have seen something."
 
 label investigation_loop:
     scene city-night
@@ -42,10 +42,31 @@ label investigation_loop:
             jump morgue
         "Q's Mansion":
             jump mansion
+        "The Pub":
+            jump pub
         "Fight the [selected_creature]" if (selected_creature != ""):
             jump fight
 
     return
+
+label pub:
+    scene city-night
+    show j
+    "I'm the kelpie in human form but you don't know that yet. Clarissa just doesn't know how to add images to this just yet. Pretend you're looking at a lady with shiny/greasy long hair."
+    "Welcome to the Watering Hole, can I help you?"
+    you "Hi, I've heard that there might be someone...not quite human here."
+    j "What an absurd thing to say. There's no reason to wonder around here."
+    "I better ask some locals."
+    "Now pretend the screen has changed to showing some locals."
+    you "What do you think of this pub?"
+    j "It's a great place to wallow in misery. When I come here, I feel like I can drown in my sorrows."
+    j "Does seem like they water the drinks, though."
+    "Watering the drinks, people feel sorrow...interesting. I'll remember that."
+    "The human kelpie comes back on the screen."
+    j "Sometimes humans just need a place to wallow in their sorrows. I give them that."
+    you "People shouldn't have to dwell on sadness. I'll take my leave."
+    "As I go to leave, I can smell the bog. It seems to be coming from the barrels behind the counter. It's a sour, unpleasant smell."
+    jump investigation_loop
 
 label library:
     scene library
@@ -155,6 +176,18 @@ label fight:
         "Lure it with food.":
             "I placed some tantalizing treats on the ground near the river."
             "I waited a long time..."
+            jump fight_loop
+        "Talk to it.":
+            you "Hey."
+            j "(again, it's the kelpie I'm just bad at this) Do you really have to do this? Can't you just leave me alone?"
+            you "A kid got hurt."
+            j "That kid wasn't some saint. He was hurting people. He came into my pub and stole a full keg. He and his friends chugged it."
+            you "Kids stealing doesn't justify murder."
+            j "It wasn't murder. He filled himself with so much wonder that he became wholly irresitstible. I didn't do anything to him; he did it to himself."
+            you "You didn't kill him?"
+            j "No. Others like me did. I didn't endorse it, but I can hardly blame them, either."
+            you "You know I can't let this go."
+            j "Do what you need to do."
             jump fight_loop
         "Lure it with loneliness.":
             "I looked around. Good, I was alone."
